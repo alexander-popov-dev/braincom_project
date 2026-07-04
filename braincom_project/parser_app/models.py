@@ -1,7 +1,7 @@
 from django.db import models
 
 class Product(models.Model):
-    title = models.CharField(max_length=500, null=True, blank=True)
+    title = models.CharField(max_length=1000, null=True, blank=True)
     color = models.CharField(max_length=100, null=True, blank=True)
     memory = models.CharField(max_length=100, null=True, blank=True)
     vendor = models.CharField(max_length=200, null=True, blank=True)
@@ -13,3 +13,6 @@ class Product(models.Model):
     diagonal = models.CharField(max_length=100, null=True, blank=True)
     display_resolution = models.CharField(max_length=100, null=True, blank=True)
     specifications = models.JSONField(null=True, blank=True)
+
+    def __str__(self):
+        return f"Title: {self.title}."
